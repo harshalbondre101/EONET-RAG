@@ -2,3 +2,4 @@ pymysql
 fastapi
 ollama
 requests
+aiomysql

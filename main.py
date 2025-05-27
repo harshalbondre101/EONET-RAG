@@ -1,5 +1,4 @@
 from fastapi import FastAPI, Request
-from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 
@@ -22,7 +21,7 @@ async def post_root(request: Request):
     user_input = form_data.get("query", "")
     
     print(f"Received POST request with user input: {user_input}")
-    response = get_response(user_input)
+    response = await get_response(user_input)
 
     return templates.TemplateResponse(
         request=request, name="index.html", context={"response": response}

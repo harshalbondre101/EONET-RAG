@@ -1,7 +1,7 @@
 from ollama import chat
 from dbhelper import get_description_by_title
 
-def get_response(prompt: str) -> str:
+async def get_response(prompt: str) -> str:
     # System and user messages
     messages = [
         {
